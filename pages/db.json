@@ -1,0 +1,45 @@
+{
+    "bg": "https://supremaluvas.com.br/wp-content/uploads/2019/09/brigada-de-incendios-na-sua-empresa.jpg",
+    "title": "Quiz Brigada #BrigadaQuiz",
+    "description": "Um quiz rápido sobre Brigada de Incêndio",
+    "questions": [
+      {
+        "image": "https://placehold.it/400x400",
+        "title": "Questão numero 01",
+        "description": "Descição da questão numero #01",
+        "answer": 1,
+        "alternatives": [
+          "Alternativa A",
+          "Alternativa B",
+          "Alternativa C",
+          "Alternativa D"
+        ]
+      },
+      {
+        "image": "https://placehold.it/400x400",
+        "title": "Questão numero 02",
+        "description": "Descição da questão numero #02",
+        "answer": 2,
+        "alternatives": [
+          "Alternativa A",
+          "Alternativa B",
+          "Alternativa C",
+          "Alternativa D"
+        ]
+      }
+    ],
+    "external": [
+      "https://aluraquiz-css.omariosouto.vercel.app/"
+    ],
+    "theme": {
+      "colors": {
+        "primary": "#aa2e25",
+        "secondary": "#ff3d00",
+        "mainBg": "#213f4e",
+        "contrastText": "#ffff",
+        "wrong": "#FF5722",
+        "success": "#4CAF50"
+      },
+      "borderRadius": "4px"
+    }
+  }
