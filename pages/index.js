@@ -1,9 +1,16 @@
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+
 import db from './db.json';
-import Widget from '../src/components/Widget'
-import QuizBackground from '../src/components/QuizBackground'
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
+import Widget from '../src/components/Widget';
+import QuizBackground from '../src/components/QuizBackground';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+
 
 //const BackgroundImage = styled.div`
   //background-image: url(${db.bg});
@@ -12,7 +19,8 @@ import GitHubCorner from '../src/components/GitHubCorner'
   //background-position: flex;  
 //`; 
 
-export const QuizContainer = styled.div`
+
+const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
   padding-top: 45px;
@@ -25,15 +33,38 @@ export const QuizContainer = styled.div`
 
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState('');
+  //console.log('retorno do useState', name, setName);
+
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>QuizBrigada</title>
+      </Head>
       <QuizContainer>
         <Widget>         
              <Widget.Header>
                <h1>Brigada</h1>
              </Widget.Header>
           <Widget.Content>
-              <p>lorem ipsum dolor sit amet...</p>
+          <form onSubmit={function (infosDoEvento) {
+              infosDoEvento.preventDefault();
+              router.push(`/quiz?name=${name}`);
+              console.log('Fazendo uma submissão por meio do react');
+              // router manda para a proxima página
+            }}
+            >
+              <Input 
+                name="nomeDousuario"
+                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
+                placeholder="Digite seu nome"
+                value={name}
+              />
+              <Button type="submit" disabled={name.length === 0}>
+                {`Jogar ${name}`}
+              </Button>
+            </form>
           </Widget.Content>
         </Widget>
 
