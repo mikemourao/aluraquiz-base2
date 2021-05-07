@@ -4,33 +4,34 @@
     "description": "Um quiz rápido sobre Brigada de Incêndio",
     "questions": [
       {
-        "image": "https://www.acessoriosparacaminhoes.com.br/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/e/x/extintor-incendio-8kg-po-abc-c-mangueira_2_.jpg",
+        "image": "https://www.sindipetrosp.org.br/wp-content/uploads/2019/07/Treinamento-Brigada-19-1024x683.jpg",
         "title": "Questão numero 01",
-        "description": "Descição da questão numero #01",
+        "description": "Em primeiro lugar, qual a função de um brigadista?",
         "answer": 0,
         "alternatives": [
-          "Alternativa A",
-          "Alternativa B",
-          "Alternativa C",
-          "Alternativa D"
+          "Promover de forma segura e rápida o abandono imediato da população do local onde está havendo  o sinistro.",
+          "Combater o incêndio.",
+          "Protejer o patrimônio do empregador.",
+          "Nenhuma das anteriores."
         ]
       },
       
       {
-        "image": "https://placehold.it/400x400",
+        "image": "http://www.skop.com.br/wp-content/uploads/2019/05/saiba-identificar-o-extintor-correto-para-cada-tipo-de-incendio.jpg",
         "title": "Questão numero 02",
-        "description": "Descição da questão numero #02",
+        "description": "Extintor classe C, deve ser usado para qual tipo de incêndio?",
         "answer": 2,
         "alternatives": [
-          "Alternativa A",
-          "Alternativa B",
-          "Alternativa C",
-          "Alternativa D"
+          "Incêndios em líquidos inflamáveis.",
+          "Incêndios em metais pirofóricos.",
+          "Incêndios em equipamentos eletrônicos.",
+          "Incêndios em sólidos, como madeira, papel, borracha e plástico."
         ]
       }
     ],
     "external": [
-      "https://aluraquiz-css.omariosouto.vercel.app/"
+      "https://aluraquiz-css.omariosouto.vercel.app/",
+      "https://aluraquiz-marvel.omariosouto.vercel.app/"
     ],
     "theme": {
       "colors": {

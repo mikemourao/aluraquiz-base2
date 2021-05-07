@@ -3,6 +3,7 @@ import db from './db.json';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
+import AlternativesForm from '../src/components/AlternativesForm';
 import Button from '../src/components/Button';
 
 function ResultWidget({ results }) {
@@ -28,7 +29,7 @@ function ResultWidget({ results }) {
                     </p>   {/*reduce, faz a soma dos resultados*/}
                 <ul>
                     {results.map((result, index) => (
-                        <li>
+                        <li key={`result__${result}`}>
                             #
                             {index + 1} 
                             {' '}
@@ -50,7 +51,6 @@ function LoadingWidget() {
             </Widget.Header>
 
             <Widget.Content>
-                [Desafio do Loading]
             </Widget.Content>
         </Widget>
     );
@@ -95,7 +95,7 @@ function QuestionWidget({
                         {question.description}
                     </p>
                    
-                   <form 
+                   <AlternativesForm
                    onSubmit={(infosDoEvento) => {
                        infosDoEvento.preventDefault();
                        setIsQuestionSubmited(true);
@@ -110,14 +110,18 @@ function QuestionWidget({
                    >
                     {question.alternatives.map((alternative, alternativeIndex) => {
                         const alternativeId = `alternative__${alternativeIndex}`;
+                        const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR';
+                        const isSelected = selectedAlternative === alternativeIndex;
                         return (
                             <Widget.Topic
                                 as="label"
                                 key={alternativeId}
                                 htmlFor={alternativeId}
+                                data-selected={isSelected}
+                                data-status={isQuestionSubmited && alternativeStatus}
                             >
                                 <input
-                                   // style={{ display: 'none'}}
+                                    style={{ display: 'none'}}
                                     id={alternativeId}
                                     name={questionId}
                                     onChange={() => setSelectedAlternative(alternativeIndex)}
@@ -136,7 +140,7 @@ function QuestionWidget({
                     </Button>
                     {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
                     {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
-                    </form>
+                    </AlternativesForm>
                 </Widget.Content>
         </Widget>
     );
