@@ -49,6 +49,6 @@ export async function getServerSideProps(context) {
   }
 }
 
-
+//
 // quiz.js é o index.js que deveria está junto do id.js
 //bd.json está dentro da pasta 
