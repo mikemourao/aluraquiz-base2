@@ -224,3 +224,5 @@ export default function QuizPage({ externalQuestions, externalBg }) {
     </QuizBackground>
   );
 }
+
+// final
